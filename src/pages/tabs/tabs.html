@@ -1,4 +1,14 @@
-<ion-tabs>
+<ion-menu [content]="content" side="right">
+  <ion-content>
+    <ion-toolbar>
+        <ion-title>Title</ion-title>
+    </ion-toolbar>
+    <div padding>
+      <button ion-button fill color="danger" (click)="logout()">Logout</button>
+    </div>
+  </ion-content>
+</ion-menu>
+<ion-tabs #content>
   <ion-tab [root]="tabPlacesRoot" tabTitle="places" tabIcon="list-box"></ion-tab>
   <ion-tab [root]="tabAddRoot" tabTitle="add" tabIcon="add-circle"></ion-tab>
   <ion-tab [root]="tabAroundRoot" tabTitle="around" tabIcon="map"></ion-tab>

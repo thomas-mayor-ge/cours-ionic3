@@ -18,12 +18,17 @@ export class TabsPage {
   tabAddRoot = 'AddPage';
   tabAroundRoot = 'AroundPage';
   tabFriendsRoot = 'FriendsPage';
+  myContent = 'Toto';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
+  }
+
+  logout() {
+    console.log('logout clicked');
   }
 
 }

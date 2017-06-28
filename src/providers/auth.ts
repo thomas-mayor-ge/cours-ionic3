@@ -66,7 +66,7 @@ export class AuthProvider {
     return err;
   }
 
-  private handleJwtResponse(jwt: string) {
+  private handleJwtResponse(jwt: string): Promise<string> {
     return this.storage.set('jwt', jwt)
       .then(() =>  this.authUser.next(this.jwtHelper.decodeToken(jwt)))
       .then(() => jwt);

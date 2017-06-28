@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { Observable } from "rxjs";
+
+
+import { Place } from "../../models/place";
+import { PlaceProvider } from '../../providers/place/place';
 
 /**
  * Generated class for the PlacesPage page.
@@ -13,8 +18,16 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'places.html',
 })
 export class PlacesPage {
+  places$ : Observable<Place[]>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private placeProvider: PlaceProvider) {
+    this.places$ = this.placeProvider.places$;
+  }
+
+  ionViewDidEnter() {
+    console.log('ionViewDidEnter');
+    this.placeProvider.loadAll();
+
   }
 
 }

@@ -12,5 +12,6 @@
 
 
 <ion-content padding>
+  <div *ngFor="let product of products$ | async">{{product.name}}</div>
 
 </ion-content>

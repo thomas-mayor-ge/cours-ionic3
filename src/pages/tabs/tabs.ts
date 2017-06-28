@@ -36,4 +36,12 @@ export class TabsPage {
     this.auth.logout();
   }
 
+  ionViewDidLoad() {
+    console.log("I'm alive!");
+  }
+
+  ionViewWillLeave() {
+    console.log("Nooooo, don't kill me!");
+  }
+
 }

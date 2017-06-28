@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import {} from '@types/googlemaps';
 /**
  * Generated class for the MapComponent component.
  *
@@ -20,6 +20,7 @@ export class MapComponent {
   }
 
   public init(lat:number, long:number, zoom:number=12) {
+    console.log('MapComponent:init ' + this.mapID);
     this.map = new google.maps.Map(document.getElementById(`map_canvas_${this.mapID}`),
                                    {
                                      center: new google.maps.LatLng(lat, long),

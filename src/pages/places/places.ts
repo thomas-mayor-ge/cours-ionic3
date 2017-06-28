@@ -25,9 +25,12 @@ export class PlacesPage {
   }
 
   ionViewDidEnter() {
-    console.log('ionViewDidEnter');
-    this.placeProvider.loadAll();
+    console.log('PlacesPage.ionViewDidEnter');
+  }
 
+  onPlaceClick(place: Place) {
+    console.log('Place clicked', place);
+    this.navCtrl.push('PlacePage', { 'place' : place  });
   }
 
 }

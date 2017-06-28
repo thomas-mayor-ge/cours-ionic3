@@ -14,21 +14,27 @@ import { Place } from '../../models/place';
 @Injectable()
 export class PlaceProvider {
 
-  private places = new BehaviorSubject([]);
-  public places$: Observable<Place[]> = this.places.asObservable();
+  private places = new BehaviorSubject<Place[]>([]);
   private error: string;
+  public places$: Observable<Place[]> = this.places.asObservable();
+
   constructor(public authHttp: AuthHttp,
               private readonly endpoints: EndpointsProvider) {
     console.log('Hello PlaceProvider Provider');
+    this.loadAll();
   }
 
-  loadAll() : Observable<any> {
-    console.log('loadAll');
-    return this.authHttp.get(this.endpoints.getPlaces())
-                    .map(res => res.text())
-                    .map(places => { console.log('got places'); return this.places.next(JSON.parse(places)) } )                    
-                    .catch(err => Observable.throw(this.handleErrors(err)));
+  loadAll() {
+    this.authHttp.get(this.endpoints.getPlaces())
+                 .map(res => res.json())
+                 .take(1)
+                 .subscribe(
+                   data => { this.places.next(<Place[]>data); },
+                   err => this.error = this.handleErrors(err)
+                 );
   }
+
+
 
   private handleErrors(err: any): any {
     if (!err.ok && err.statusText == '') {

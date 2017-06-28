@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AroundPage } from './around';
+import { PlacePage } from './place';
 import { HeaderContentComponentModule } from '../../components/header-content/header-content.module';
 import { MapComponentModule } from '../../components/map/map.module';
+
 @NgModule({
   declarations: [
-    AroundPage,
+    PlacePage,
   ],
   imports: [
-    IonicPageModule.forChild(AroundPage),
+    IonicPageModule.forChild(PlacePage),
     HeaderContentComponentModule,
     MapComponentModule
   ],
   exports: [
-    AroundPage
+    PlacePage
   ]
 })
-export class AroundPageModule {}
+export class PlacePageModule {}

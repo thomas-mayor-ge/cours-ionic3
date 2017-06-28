@@ -1,0 +1,16 @@
+<!--
+  Generated template for the PlacePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <header-content title="{{place.name}}" backEnabled="true" (onBack)="onBackClick()"></header-content>
+
+</ion-header>
+
+
+<ion-content>
+  <map mapID="place{{place.id}}"></map>
+</ion-content>

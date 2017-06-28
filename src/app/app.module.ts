@@ -26,8 +26,7 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions, stor
 
 @NgModule({
   declarations: [
-    MyApp,
-    MapComponent
+    MyApp
   ],
   imports: [
     BrowserModule,

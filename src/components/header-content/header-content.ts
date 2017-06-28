@@ -26,6 +26,7 @@ export class HeaderContentComponent {
   }
 
   onClickBack(){
+    console.log('header: back click');
     this.onBack.emit({})
   }
 

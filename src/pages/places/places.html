@@ -12,6 +12,13 @@
 
 
 <ion-content padding>
-  <div *ngFor="let product of products$ | async">{{product.name}}</div>
-
+  <ion-list>
+    <ion-item *ngFor="let place of places$ | async" (click)="onPlaceClick(place)">
+      <ion-avatar item-start>
+        <img [src]="place.image">
+      </ion-avatar>
+      <h2>{{place.name}}</h2>
+      <p>{{place.description}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

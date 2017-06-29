@@ -16,12 +16,12 @@
 <ion-content padding>
   <ion-list class="login_list">
     <ion-item>
-      <ion-label fixed>Email</ion-label>
+      <ion-label floating>Email</ion-label>
       <ion-input type="text" value="" [(ngModel)]="email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>Password</ion-label>
+      <ion-label floating>Password</ion-label>
       <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
     <ion-item *ngIf="error" class="login_error">

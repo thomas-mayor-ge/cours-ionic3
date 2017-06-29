@@ -11,7 +11,6 @@ import { Storage, IonicStorageModule} from "@ionic/storage";
 import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth';
 import { EndpointsProvider } from '../providers/endpoints';
-import { MapComponent } from '../components/map/map';
 import { PlaceProvider } from '../providers/place/place';
 
 // Auth Factory

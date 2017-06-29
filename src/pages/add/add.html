@@ -10,5 +10,14 @@
 
 </ion-header>
 <ion-content padding>
-
+  <ion-list class="add-list">
+    <button ion-button round icon-left item-center color="dark" (click)="takePictureClick()">
+      <ion-icon name="camera"></ion-icon>
+      Take Picture
+    </button>
+  </ion-list>
+  <ion-item *ngIf="error && error.length">
+    {{error}}
+  </ion-item>
+  <img *ngIf="imageSrc && imageSrc.length" [src]="imageSrc" />
 </ion-content>

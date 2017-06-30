@@ -15,8 +15,8 @@ import { AuthProvider } from '../../providers/auth';
 })
 export class LoginPage {
 
-  email:string;
-  password:string;
+  email:string = 'test';
+  password:string = 'test';
   error:string;
 
   constructor(public readonly navCtrl: NavController,

@@ -12,12 +12,16 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngIf="error">{{error}}</ion-item>
-    <ion-item *ngFor="let contact of contacts">
-      {{contact.displayName}}  
+  <ion-item-group light *ngFor="let group of contacts">
+    <ion-list-header>{{group.group}}</ion-list-header>
+    <ion-item  *ngFor="let contact of group.contacts">
+      <ion-avatar *ngIf="contact.photo" item-start>
+        <img [src]="contact.photo">
+      </ion-avatar>
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.phone}}</p>
+      <p *ngIf="contact.photo">{{contact.photo}}</p>
     </ion-item>
-
-  </ion-list>
-
+  </ion-item-group>
+  <ion-item *ngIf="error">{{error}}</ion-item>
 </ion-content>

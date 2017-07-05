@@ -12,5 +12,7 @@
 
 
 <ion-content>
+  <button ion-button (click)="initGeolocation()">Get Location</button>
+    <div *ngIf="mapInfo">{{mapInfo}}</div>
     <map mapID="around"></map>
 </ion-content>

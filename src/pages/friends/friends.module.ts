@@ -16,7 +16,7 @@ import { Contacts } from '@ionic-native/contacts';
     FriendsPage
   ],
   providers: [
-    Contacts
+    Contacts,
   ]
 })
 export class FriendsPageModule {}
